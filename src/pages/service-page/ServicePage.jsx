@@ -8,7 +8,7 @@ import { Button } from '@consta/uikit/Button';
 
 import { useNavigate } from 'react-router-dom';
 
-import './ServiceDetailPage.css';
+import './ServicePage.css';
 
 const ServiceDetailPage = () => {
     const { id } = useParams();

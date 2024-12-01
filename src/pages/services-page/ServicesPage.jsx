@@ -6,7 +6,7 @@ import { Button } from '@consta/uikit/Button';
 
 import { useNavigate } from 'react-router-dom';
 
-import './ServicePage.css';
+import './ServicesPage.css';
 
 
 export const ServicePage = () => {

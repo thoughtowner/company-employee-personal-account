@@ -1,9 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+import styles from './index.module.css';
 import App from './components/app/App';
 import reportWebVitals from './reportWebVitals';
 import { Theme, presetGpnDefault } from '@consta/uikit/Theme';
+
+function clearTokenOnStart() {
+    localStorage.removeItem('token'); // Удаляет токен при запуске приложения
+}
+
+clearTokenOnStart(); // Вызов функции для удаления токена
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

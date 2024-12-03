@@ -1,30 +1,14 @@
 import { useEffect, useState } from "react";
-
 import { useParams } from "react-router-dom";
-
 import { Card } from '@consta/uikit/Card';
 import { Text } from '@consta/uikit/Text';
 import { Button } from '@consta/uikit/Button';
-
 import { useNavigate } from 'react-router-dom';
+import styles from './ServicePage.module.css'; // импортируем стили как объект
 
-import './ServicePage.css';
-
-const ServiceDetailPage = () => {
+const ServicePage = () => {
     const { id } = useParams();
     const navigate = useNavigate();
-
-    const goToHomePage = () => {
-        navigate('/');
-    };
-
-    const goToServicePage = () => {
-        navigate('/services');
-    };
-
-    const goToLoginPage = () => {
-        navigate('/login');
-    };
 
     const [service, setService] = useState(null);
     const [loading, setLoading] = useState(true);
@@ -63,40 +47,28 @@ const ServiceDetailPage = () => {
 
     return (
         <div>
-            <div>
-                <div className="header">
-                    <div className="header-left">
-                        <Button label="Главная" onClick={goToHomePage} size="s" className="header-button" />
-                        <Button label="Сервисы" onClick={goToServicePage} size="s" className="header-button" />
-                    </div>
-                    <div className="header-right">
-                        <Text>ФИО</Text>
-                        <Button label="Войти" onClick={goToLoginPage} size="s" className="header-button" />
-                    </div>
-                </div>
-            </div>
-            <div className="service-detail-container">
-                <div className="service-detail-card">
-                    <Card className="card-style">
+            <div className={styles['service-detail-container']}>
+                <div className={styles['service-detail-card']}>
+                    <Card className={styles['card-style']}>
                         {service ? (
                             <div>
                                 {service.image && (
                                     <img
                                         src={service.image}
                                         alt={service.name}
-                                        className="service-image"
+                                        className={styles['service-image']}
                                     />
                                 )}
-                                <Text size="xl" weight="bold" className="service-name">
+                                <Text size="xl" weight="bold" className={styles['service-name']}>
                                     {service.name}
                                 </Text>
-                                <Text size="m" className="service-description">
+                                <Text size="m" className={styles['service-description']}>
                                     {service.description}
                                 </Text>
-                                <Button label="Назад" onClick={() => window.history.back()} className="back-button" />
+                                <Button label="Назад" onClick={() => window.history.back()} className={styles['back-button']} />
                             </div>
                         ) : (
-                            <Text size="xl" color="alert" weight="bold" className="no-data-message">
+                            <Text size="xl" color="alert" weight="bold" className={styles['no-data-message']}>
                                 Данные не найдены
                             </Text>
                         )}
@@ -107,4 +79,4 @@ const ServiceDetailPage = () => {
     );
 };
 
-export default ServiceDetailPage;
+export default ServicePage;

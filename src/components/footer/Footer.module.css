@@ -19,13 +19,13 @@
   color: white;  /* Белый текст */
   text-decoration: none;
   font-weight: bold;
-  border-radius: 8px;  /* Закругленные углы */
+  border-radius: 5px;  /* Закругленные углы */
   transition: background-color 0.3s ease;
 }
 
 .link:hover,
 .link.active {
-  background-color: #0056b3;  /* Темно-синий при наведении */
+  background-color: #0056b3;  /* Темно-синий цвет при наведении */
   text-decoration: none;  /* Убираем подчеркивание */
 }
 
@@ -43,26 +43,25 @@
   margin-right: 10px;
 }
 
-/* Кнопки */
-.logoutButton, .loginButton {
-  background-color: #007bff;  /* Синий фон */
+.loginButton {
+  background-color: #007bff;
   color: white;
   border: none;
-  padding: 10px 20px;  /* Прямоугольная форма */
-  border-radius: 8px;  /* Закругленные углы */
+  padding: 10px 20px;  /* Увеличиваем размер для лучшего восприятия */
+  border-radius: 5px;  /* Закругленные углы */
   cursor: pointer;
-  font-size: 16px;
   transition: background-color 0.3s ease;
 }
 
-.logoutButton:hover, .loginButton:hover {
-  background-color: #0056b3;  /* Темный синий при наведении */
+.loginButton:hover {
+  background-color: #0056b3;
 }
 
-.logoutButton:focus, .loginButton:focus {
-  outline: none;  /* Убираем обводку по умолчанию */
+.description {
+  clear: both;
+  margin-top: 10px;
 }
 
-.logoutButton:active, .loginButton:active {
-  background-color: #004085;  /* Еще более темный синий при нажатии */
+.copy {
+  color: #888;
 }

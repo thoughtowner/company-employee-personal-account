@@ -13,6 +13,11 @@ import ProfilePage from '../../pages/profile-page/ProfilePage';
 import NotFoundPage from '../../pages/not-found-page/NotFoundPage';
 
 import NavigationBar from "../navigation-bar/NavigationBar";
+import Footer from "../footer/Footer";
+
+import MainLayout from "../../MainLayout";
+
+import AuthRoute from "../AuthRoute";
 
 
 function App() {
@@ -21,13 +26,16 @@ function App() {
       <BrowserRouter>
       <NavigationBar/>
         <Routes>
-          <Route path='/' element= { <MainPage/> } />
-          <Route path='/services' element = { <ServicesPage/> } />
-          <Route path='/services/:id' element = { <ServicePage/> } />
-          <Route path='/login' element = { <LoginPage/> } />
-          <Route path='/profile' element = { <ProfilePage/> } />
-          <Route path='/*' element = { <NotFoundPage/> } />
+          <Route path='/' element= { <MainLayout/> }>
+            <Route index element= { <MainPage/> } />
+            <Route path='/services' element = { <AuthRoute> <ServicesPage/> </AuthRoute> } />
+            <Route path='/login' element = { <LoginPage/> } />
+            <Route path='/services/:id' element = { <AuthRoute> <ServicePage/> </AuthRoute> } />
+            <Route path='/profile' element = { <AuthRoute> <ProfilePage/> </AuthRoute>  } />
+            <Route path='/*' element = { <NotFoundPage/> } />
+          </Route>
         </Routes>
+      <Footer/>
       </BrowserRouter>
     </Provider>
   );

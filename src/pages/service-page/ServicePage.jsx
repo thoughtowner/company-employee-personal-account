@@ -4,14 +4,13 @@ import { Card } from '@consta/uikit/Card';
 import { Text } from '@consta/uikit/Text';
 import { Button } from '@consta/uikit/Button';
 import { useNavigate } from 'react-router-dom';
-import styles from './ServicePage.module.css'; // импортируем стили как объект
+import styles from './ServicePage.module.css';
+
 
 const ServicePage = () => {
     const { id } = useParams();
-    const navigate = useNavigate();
 
     const [service, setService] = useState(null);
-    const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
     useEffect(() => {

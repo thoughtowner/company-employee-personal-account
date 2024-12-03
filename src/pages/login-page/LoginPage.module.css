@@ -1,21 +1,6 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-html, body {
-    height: 100%;
-    font-family: 'Arial', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #f4f6f9;
-}
-
 .container {
     justify-content: center;
-    
+    display: flex;
     align-items: center;
     height: 100%;
     width: 100%;
